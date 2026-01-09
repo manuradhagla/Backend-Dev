@@ -1,0 +1,4 @@
+Merge conflicts happen when:
+- Two branches modify the same part of a file differently.
+- Git cannot automatically decide which change to keep.
+- Developers must manually resolve the conflict by editing the file and committing the resolution.

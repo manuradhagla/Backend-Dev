@@ -1,0 +1,11 @@
+const fs = require("fs");
+const path =require("path");
+const mainfolder = "./MainFolder";
+const a= path.join(mainfolder,"a");
+const b = path.join(mainfolder, "b");
+const filePath = path.join(b,"hello.txt");
+fs.mkdirSync(mainfolder, { recursive: true});
+fs.mkdirSync(a, {recursive: true});
+fs.mkdirSync(b, { recursive: true });
+fs.writeFileSync(filePath, "hello worls again");
+console.log("folder ended");

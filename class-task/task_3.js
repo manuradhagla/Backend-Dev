@@ -6,15 +6,12 @@ let students = [
     { id: 1, name: 'Alice', branch: 'CSE' },
     { id: 2, name: 'Bob', branch: 'ECE' }
 ];
-
-
 function logRequest(req) {
     const log = `${new Date().toISOString()} - ${req.method} ${req.url}\n`;
     fs.appendFile('log.txt', log, (err) => {
         if (err) console.error('Logging failed:', err);
     });
 }
-
 const server = http.createServer((req, res) => {
     logRequest(req);
 
@@ -29,7 +26,6 @@ const server = http.createServer((req, res) => {
         res.writeHead(200);
         res.end(JSON.stringify(students));
     }
-
     // GET /students/:id → return only one student
     else if (method === 'GET' && path.startsWith('/students/')) {
         const id = parseInt(path.split('/')[2]);
